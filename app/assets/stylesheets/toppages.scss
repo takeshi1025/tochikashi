@@ -1,0 +1,118 @@
+.application-top {
+  position: relative;
+}
+
+img {
+  margin-top: -24px;
+  max-width: 100%;
+  height: auto;
+}
+
+.catch-copy {
+  margin: 5% auto;
+  text-align: center;
+}
+
+.catch-text {
+  position: absolute;
+  font-size: 5vw;
+  font-weight: bold;
+  line-height: 2;
+  top: 10px;
+  left: 20px;
+  color: #ffff;
+}
+
+.catch-text p {
+  text-align: right;
+  padding: 50px;
+}
+
+.application-about {
+  margin-top: -50px;
+  font-size: 30px;
+  border: 3px dashed #00CCCC;
+}
+
+.about-title {
+  margin-top: 20px;
+  font-size: 40px;
+}
+
+.about-title span {
+  color: #00CCCC;
+}
+
+.about-description {
+  margin-top: 20px;
+  text-decoration: underline red;
+  padding: 20px;
+}
+
+.step-area-title h1 strong {
+  color: blue;
+}
+
+.step-text {
+  display:flex;
+  flex-wrap: wrap;
+  margin: 100px;
+}
+
+.step-1 img {
+  width: 100%;
+  height: 300px;
+}
+
+.step-1 p {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.step-1 p span {
+  color: red;
+}
+
+.step-2 img {
+  width: 100%;
+  height: 300px;
+}
+.step-2 p {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.step-2 p span {
+  color: red;
+}
+
+.step-3 img {
+  width: 100%;
+  height: 300px;
+}
+
+.step-3 p {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.step-3 p span {
+  color: red;
+}
+
+.warning h1 {
+  font-weight: bold;
+  
+}
+
+.warning h1 span {
+  color: red;
+}
+
+.warning-text ul {
+  text-align: left;
+  font-size: 20px;
+}
