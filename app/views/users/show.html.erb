@@ -1,0 +1,57 @@
+<div class="container-fluid"> 
+  <div class="row">
+    <aside class="col-sm-4">
+      <div class="card">
+        <div class="card-header text-center">
+          <h3 class="card-title"><%= @user.name %></h3>
+        </div>
+        <div class="card-body">
+          <div class="profile_image text-center mb-3">
+            <%= attachment_image_tag @user, :profile_image, fallback: "no_image.png", size: "300x250" %>
+          </div>
+          <%= render 'relationships/follow_button', user: @user %>
+          <p class="birthplace mt-3"><%= @user.birthplace %></p>
+          <p class="introduce-title mt-3">【土地契約の条件】</p>
+          <div class="introduce-text mb-3">
+            <p><%= simple_format @user.introduce %></p>
+          </div>
+          <% if @user.id == current_user.id %>
+            <p><%= link_to '編集', edit_user_path(@user), class: 'btn btn-lg btn-primary'  %></p>
+          <% end %>
+        </div>
+      </div>
+    </aside>
+    <div class="col-sm-8">
+      <ul class="nav nav-tabs nav-justified mt-4 mb-3">
+        <li class="nav-item"><a href="<%= followings_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followings_user_path(@user)) %>">フォロー  <span class="badge badge-secondary"><%= @count_followings %></span></a></li>
+        <li class="nav-item"><a href="<%= followers_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followers_user_path(@user)) %>">フォロワー  <span class="badge badge-secondary"><%= @count_followers %></span></a></li>
+      </ul>
+    </div>
+    <% @user.tochis.each do |tochi| %>
+      <div class="card col-sm-4">
+        <%= attachment_image_tag tochi, :image %>
+        <%= link_to tochi_path(tochi), class: "panel-block" do %>
+          <span class="panel-icon">
+            <i class="fas fa-book" aria-hidden="true"></i>
+          </span>
+          この土地を見る
+        <% end %>
+        <% if @user.id == current_user.id %>
+          <%= link_to edit_tochi_path(tochi), class: "panel-block" do %>
+            <span class="panel-icon">
+              <i class="fas fa-edit"></i>
+            </span>
+            この土地を編集する
+          <% end %>
+          <%= link_to tochi_path(tochi), method: :delete, data: {confirm: "削除しますか？"}, class: "panel-block" do %>
+            <span class="panel-icon">
+              <i class="fas fa-trash"></i>
+            </span>
+            この土地を削除する
+          <% end %>
+          <%= tochi.updated_at.strftime("%Y-%m-%d %H:%M") %>更新
+          <% end %>
+      </div>
+    <% end %>
+  </div>
+</div> 

@@ -1,0 +1,35 @@
+<div class="container-fluid"> 
+    <div class="row">
+        <div class="col-sm-6 offset-sm-3">
+            <h1 class="edit text-center mt-5">プロフィール編集</h1>
+            <%= form_with(model: @user, local: true) do |f| %>
+                <div class="form-group">
+                    <%= f.label :birthplace, '出身地' %>
+                    <%= f.select :birthplace, User.birthplaces.keys, {}, class: 'form-control' %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.label :name, 'お名前' %>
+                    <%= f.text_field :name, class: 'form-control' %>
+                </div>
+                
+                <div class="form-group">
+                    <%= f.label :email, 'メールアドレス' %>
+                    <%= f.email_field :email, class: 'form-control' %>
+                </div>
+                
+                <div class="form-group">
+                    <%= f.label :introduce, '土地契約の条件' %>
+                    <%= f.text_area :introduce, class: 'form-control' %>
+                </div>
+                
+                <div class="form-group">
+                    <%= f.label :profile_image, 'プロフィール画像' %>
+                    <%= f.attachment_field :profile_image, class: 'form-control' %>
+                </div>
+                
+                <%= f.submit 'プロフィールを更新する', class: 'btn btn-primary mb-5' %>
+            <% end %>
+        </div>
+    </div> 
+</div> 

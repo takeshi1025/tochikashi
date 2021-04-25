@@ -6,8 +6,8 @@
     <title>トチカシ</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-     <link rel="stylesheet" href="/css/application.css">
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+      <link rel="stylesheet" href="/css/application.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -19,7 +19,8 @@
 
   <body>
     <%= render 'layouts/navbar' %>
-      <%= render 'layouts/flash_messages' %>
+    <%= render 'layouts/flash_messages' %>  
+    
     <%= yield %>
     <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
   </body>

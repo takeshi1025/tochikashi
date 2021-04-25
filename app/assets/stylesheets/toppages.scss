@@ -1,118 +1,73 @@
-.application-top {
+.top-image {
   position: relative;
-}
-
-img {
-  margin-top: -24px;
-  max-width: 100%;
+  width: 100%;
   height: auto;
-}
-
-.catch-copy {
-  margin: 5% auto;
-  text-align: center;
 }
 
 .catch-text {
   position: absolute;
-  font-size: 5vw;
-  font-weight: bold;
-  line-height: 2;
-  top: 10px;
-  left: 20px;
-  color: #ffff;
-}
-
-.catch-text p {
-  text-align: right;
-  padding: 50px;
+  font-size: 300%;
+  color: white;
+  top: 100px;
+  left: 30px;
 }
 
 .application-about {
-  margin-top: -50px;
-  font-size: 30px;
-  border: 3px dashed #00CCCC;
+  margin-top: 70px;
+  border: solid 3px #33FF00;
+  border-radius: 5px;
 }
 
 .about-title {
-  margin-top: 20px;
-  font-size: 40px;
+  font-size: 50px;
 }
 
-.about-title span {
-  color: #00CCCC;
+.about-title-text {
+  font-size: 40px;
+  color: #003399;
 }
 
 .about-description {
-  margin-top: 20px;
+  padding-left: 60px;
+  margin-top: 10px;
+  font-size: 30px;
   text-decoration: underline red;
-  padding: 20px;
+}
+
+.step-area-title h1 {
+  font-size: 50px;
 }
 
 .step-area-title h1 strong {
-  color: blue;
+  color: red;
 }
 
 .step-text {
   display:flex;
-  flex-wrap: wrap;
-  margin: 100px;
+  justify-content:space-around;
+  flex-wrap:wrap;
 }
 
-.step-1 img {
-  width: 100%;
-  height: 300px;
+.step-text p {
+  text-align: left;
+  font-size: 20px;
 }
 
-.step-1 p {
-  margin-top: 10px;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.step-1 p span {
+.step-text p span {
   color: red;
-}
-
-.step-2 img {
-  width: 100%;
-  height: 300px;
-}
-.step-2 p {
-  margin-top: 10px;
-  font-size: 18px;
   font-weight: bold;
-}
-
-.step-2 p span {
-  color: red;
-}
-
-.step-3 img {
-  width: 100%;
-  height: 300px;
-}
-
-.step-3 p {
-  margin-top: 10px;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.step-3 p span {
-  color: red;
-}
-
-.warning h1 {
-  font-weight: bold;
-  
 }
 
 .warning h1 span {
   color: red;
+  font-weight: bold;
 }
 
-.warning-text ul {
+.warning-text {
+  background-color: #FFCCFF;
+}
+
+.warning-text ul li {
   text-align: left;
-  font-size: 20px;
+  font-size: 30px;
 }

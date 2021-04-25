@@ -1,0 +1,26 @@
+<div class="row">
+  <aside class="col-sm-4">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title"><%= @user.name %></h3>
+      </div>
+      <div class="card-body">
+        <%= attachment_image_tag @user, :profile_image, fallback: "no_image.png", size: "150x150" %>
+        <%= render 'relationships/follow_button', user: @user %>
+          <p><%= @user.birthplace %></p>
+          <p class="introduce-title mt-3">【土地契約の条件】</p>
+          <div class="introduce-text mb-3">
+            <p><%= simple_format @user.introduce %></p>
+          </div>
+      </div>
+    </div>
+    <%= render 'relationships/follow_button', user: @user %>
+  </aside>
+  <div class="col-sm-8">
+    <ul class="nav nav-tabs nav-justified mb-3">
+      <li class="nav-item"><a href="<%= followings_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followings_user_path(@user)) %>">フォロー  <span class="badge badge-secondary"><%= @count_followings %></span></a></li>
+      <li class="nav-item"><a href="<%= followers_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followers_user_path(@user)) %>">フォロワー  <span class="badge badge-secondary"><%= @count_followers %></span></a></li>
+    </ul>
+    <%= render 'users', users: @followings %>
+  </div>
+</div>

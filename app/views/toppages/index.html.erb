@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="application-top mb-5">
-                <img src="/assets/main_image.jpg" alt="メイン画像">
+                <img src="/assets/main_image.jpg" alt="メイン画像" class="top-image">
                 <div class="catch-copy">
                     <div class="catch-text">土地を貸し借り出来るSNS型アプリ
                         <p><i class="fas fa-leaf" style="color: green;"></i>トチカシ</a></p>
@@ -11,6 +11,17 @@
             </div>
         </div>
     </div>
+    
+    <div class="container">
+        <div class="text-center">
+            <% if logged_in? %>
+                <p>ログイン完了ユーザ： <%= current_user.name %></p>
+            <% else %>
+                <%= link_to '新規登録', signup_path, class: 'btn btn-lg btn-primary w-75' %>
+            <% end %>
+        </div>
+    </div>
+    
     
     <div class="container">
         <div class="application-about">
@@ -28,29 +39,29 @@
         <div class="step-area-title text-center mt-5">
             <h1><strong>かんたん！！</strong>アプリの使い方</h1>
         </div>
-        <div class="step-text">
-            <div class="step-1 col-xs-12 col-lg-4 mt-3 mb-5">
-                <img src="assets/step1_image.jpg" alt="説明欄画像１">
+        <div class="step-text text-center">
+            <div class="step-1 col-sm-4 mt-5">
+                <img src="assets/step1_image.jpg" alt="説明欄画像１" width="420px" height="300px">
                 <p>土地を<span>貸したい人</span>は登録後、土地の<span>詳細（画像、面積）</span>を貸し出す際の<span>条件</span>を記入する。</p>
             </div>
-            <div class="step-2 col-xs-12 col-lg-4 mt-3 mb-5">
-                <img src="assets/step2_image.jpg" alt="説明欄画像２">
+            <div class="step-2 col-sm-4 mt-5">
+                <img src="assets/step2_image.jpg" alt="説明欄画像２" width="420px" height="300px">
                 <p>土地を<span>借りたい人</span>は現在出ている土地を登録後に確認し、土地<span>所有者</span>と<span>連絡</span>を取り合いましょう。</p>
             </div>
-            <div class="step-3 col-xs-12 col-lg-4 mt-3">
-                <img src="assets/step3_image.jpg" alt="説明欄画像３">
+            <div class="step-3 col-sm-4 mt-5">
+                <img src="assets/step3_image.jpg" alt="説明欄画像３" width="420px" height="300px">
                 <p><span>所有者</span>は貸し出す<span>条件</span>が合っていれば、<span>契約</span>まで結びましょう。</p>
             </div>
         </div>
     </div>
     
     <div class="container">
-        <div class="warning text-center mb-5">
+        <div class="warning text-center mt-5 mb-5">
             <h1>【<span>注意事項</span>】</h1>
         </div>
         <div class="warning-text text-center">
             <ul>
-                <li>他人の土地を無断で貸し出した場合は不動産侵奪（刑法第２３５条の２）に問われます。</li>
+                <li>他人の土地を無断で貸し出した場合は不動産侵奪罪（刑法第２３５条の２）に問われます。</li>
                 <li>不動産侵奪とは、他人の不動産を侵奪した者は、１０年以下の懲役に処すると定められている。未遂も処罰される（刑法２４３条）もし所有者から連絡があり、発覚した場合は警察に情報を提供する場合もあります。</li>
                 <li>土地を貸し出す際の契約は、土地を取られない様にする為、必ず定期借地契約にしましょう。</li>
             </ul>
@@ -59,7 +70,7 @@
     
     <footer>
         <a href="/">
-            <i class="fas fa-leaf" style="color: green;"></i>トチカシ
+            <i class="fas fa-leaf" style="color: green;"></i>Topページ
         </a>
         <div class="row text-center">
             <div class="col-xs-12 col-md-2 col-md-offset-2  mt-3">
@@ -77,10 +88,6 @@
             <div class="col-xs-12 col-md-2 col-md-offset-4  mt-3">
                 <a class="footer-link" href="/policy">
                     <i class="fas fa-chevron-right"></i>プライバシーポリシー</a>            
-            </div>
-            <div class="col-xs-12 col-md-2 col-md-offset-4  mt-3">
-                <a class="footer-link" href="/contact">
-                    <i class="fas fa-chevron-right"></i>お問い合わせ</a>            
             </div>
         </div>
         <div class="text-center web-copyright pt-5 pb-3">

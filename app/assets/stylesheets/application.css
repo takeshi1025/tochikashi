@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+ 
+ @import "bootstrap";
+
+.flash {
+    margin-top: -24px;
+    margin-bottom: -16px;
+}
+
+.profile_image {
+    border-radius: 50%;
+}
+
+.card {
+    box-shadow: 2px 2px 4px;
+}

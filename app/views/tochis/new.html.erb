@@ -1,0 +1,26 @@
+<div class="container-fluid"> 
+  <div class="row">
+    <div class="col-sm-6 offset-sm-3">
+      <h1 class="edit text-center mt-5">土地情報記載ページ</h1>
+      <%= form_for @tochi do |f| %>
+      <div class="form-group"> 
+        <%= f.label :title, '土地住所' %>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :body, '土地情報・契約条件' %>
+        <%= f.text_area :body, class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">  
+        <%= f.label :image, '土地の画像' %>
+        <%= f.attachment_field :image, class: 'form-control' %>
+      </div>
+        
+        <%= f.submit '登録', class: 'btn btn-primary btn-block mt-5 mb-5' %>
+        
+      <% end %>
+    </div>
+  </div>
+</div>

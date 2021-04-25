@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="card">
+      <div class="card-header">
+        <%= @tochi.title %>
+      </div>
+      <div class="card-body"> 
+        <%= attachment_image_tag @tochi, :image, size: "750x750" %>
+        <%= simple_format @tochi.body %>
+          <ul style="list-style: none;">
+            <li class="comment-create">
+              <h5><i class="far fa-comment"></i>コメント</h5></li>
+            <li id="comments_area">
+              <%= render partial: 'comments/index', locals: { comments: @comments } %>
+            </li>
+          </ul>
+          <hr>
+            <div class="comment-create">
+              <h5 class="text-left">コメントを投稿する</h5>
+              <%= render partial: 'comments/form', locals: { comment: @comment, tochi: @tochi } %>
+            </div>
+      </div>
+      
+      <div class="container">
+        <div class="row">
+          <div class="tochi-edit ml-3 mb-3">
+            <% if @tochi.user.id == current_user.id %>
+              <%= link_to '編集', edit_tochi_path(@tochi), class: 'btn btn-primary' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= @tochi.user.name %>
+<%= link_to user_path(@tochi.user)  do %>
+  <%= @tochi.user.name %>さんのページ
+<% end %>
